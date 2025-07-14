@@ -130,7 +130,7 @@
             </a>
           </li>
 
-         <li class="mt-0.5 w-full">
+          <li class="mt-0.5 w-full">
             <a
               class="dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
               href="../pages/stock-all-products.html"
@@ -152,7 +152,7 @@
           <li class="mt-0.5 w-full">
             <a
               class="dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-              href="../pages/virtual-reality.html"
+              href="../pages/stock-stock-report.html"
             >
               <div
                 class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5"
@@ -171,7 +171,7 @@
           <li class="mt-0.5 w-full">
             <a
               class="dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-              href="../pages/rtl.html"
+              href="../pages/stock-sales-report.html"
             >
               <div
                 class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5"
@@ -191,14 +191,14 @@
             <h6
               class="pl-6 ml-2 text-xs font-bold leading-tight uppercase dark:text-white opacity-60"
             >
-              Account pages
+              Account Details
             </h6>
           </li>
 
           <li class="mt-0.5 w-full">
             <a
               class="dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-              href="../pages/profile.html"
+              href="../pages/stock-profile.html"
             >
               <div
                 class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5"
@@ -246,6 +246,84 @@
             </ol>
             <h6 class="mb-0 font-bold text-white capitalize">Add Products</h6>
           </nav>
+          <div
+            class="flex items-center mt-2 grow sm:mt-0 sm:mr-6 md:mr-0 lg:flex lg:basis-auto"
+          >
+            <div class="flex items-center md:ml-auto md:pr-4">
+              <div
+                class="relative flex flex-wrap items-stretch w-full transition-all rounded-lg ease"
+              >
+                <span
+                  class="text-sm ease leading-5.6 absolute z-50 -ml-px flex h-full items-center whitespace-nowrap rounded-lg rounded-tr-none rounded-br-none border border-r-0 border-transparent bg-transparent py-2 px-2.5 text-center font-normal text-slate-500 transition-all"
+                >
+                  <i class="fas fa-search"></i>
+                </span>
+                <input
+                  type="text"
+                  class="pl-9 text-sm focus:shadow-primary-outline ease w-1/100 leading-5.6 relative -ml-px block min-w-0 flex-auto rounded-lg border border-solid border-gray-300 dark:bg-slate-850 dark:text-white bg-white bg-clip-padding py-2 pr-3 text-gray-700 transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none focus:transition-shadow"
+                  placeholder="Type here..."
+                />
+              </div>
+            </div>
+            <ul
+              class="flex flex-row justify-end pl-0 mb-0 list-none md-max:w-full"
+            >
+              <li class="flex items-center">
+                <a
+                  href=""
+                  class="block px-0 py-2 text-sm font-semibold text-white transition-all ease-nav-brand"
+                >
+                  <i class="fa fa-user sm:mr-1"></i>
+                  <span class="sm:inline">Logout</span>
+                </a>
+              </li>
+              <li class="flex items-center pl-4 xl:hidden">
+                <a
+                  href="javascript:;"
+                  class="block p-0 text-sm text-white transition-all ease-nav-brand"
+                  sidenav-trigger
+                >
+                  <div class="w-4.5 overflow-hidden">
+                    <i
+                      class="ease mb-0.75 relative block h-0.5 rounded-sm bg-white transition-all"
+                    ></i>
+                    <i
+                      class="ease mb-0.75 relative block h-0.5 rounded-sm bg-white transition-all"
+                    ></i>
+                    <i
+                      class="ease relative block h-0.5 rounded-sm bg-white transition-all"
+                    ></i>
+                  </div>
+                </a>
+              </li>
+              <li class="flex items-center px-4">
+                <a
+                  href="javascript:;"
+                  class="p-0 text-sm text-white transition-all ease-nav-brand"
+                >
+                  <i
+                    fixed-plugin-button-nav
+                    class="cursor-pointer fa fa-cog"
+                  ></i>
+                  <!-- fixed-plugin-button-nav  -->
+                </a>
+              </li>
+
+              <!-- notifications -->
+
+              <li class="relative flex items-center pr-2">
+                <p class="hidden transform-dropdown-show"></p>
+                <a
+                  href="javascript:;"
+                  class="block p-0 text-sm text-white transition-all ease-nav-brand"
+                  dropdown-trigger
+                  aria-expanded="false"
+                >
+                  <i class="cursor-pointer fa fa-bell"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </nav>
 
@@ -332,7 +410,7 @@
 
           <!-- Products adds fields -->
           <div
-          id="addProducts"
+            id="addProducts"
             class="hidden w-full max-w-full px-3 mt-6 shrink-0 md:w-4/12 md:flex-0 md:mt-0"
           >
             <div
