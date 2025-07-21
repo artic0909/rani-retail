@@ -288,170 +288,508 @@
       <div class="w-full px-6 py-6 mx-auto">
         <!-- content -->
 
-
         <div class="flex flex-wrap -mx-3">
-          <div class="w-full max-w-full px-3 mt-6 md:w-12/12 md:flex-none">
+          <div class="w-full max-w-full px-3 mt-6 md:w-8/12 md:flex-none">
             <div
               class="relative flex flex-col min-w-0 break-words bg-white border-0 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border"
             >
-              <div class="p-6 px-4 pb-0 mb-0 border-b-0 rounded-t-2xl">
+              <div
+                class="p-6 px-4 pb-0 mb-0 border-b-0 rounded-t-2xl flex justify-between"
+              >
                 <h6 class="mb-0 dark:text-white">Selected Items</h6>
-                
+                <button
+                  class="px-8 py-2 font-bold leading-normal text-center text-white align-middle transition-all ease-in border-0 rounded-lg shadow-md cursor-pointer text-xs bg-blue-500 lg:block tracking-tight-rem hover:shadow-xs hover:-translate-y-px active:opacity-85"
+                  style="font-size: 0.8rem"
+                >
+                  Calculate Total
+                </button>
               </div>
-              
+
               <div class="flex-auto p-4 pt-6">
                 <ul class="flex flex-col pl-0 mb-0 rounded-lg">
+                  <!-- Cart Items -->
                   <li
                     class="relative flex p-6 mb-2 border-0 rounded-t-inherit rounded-xl bg-gray-50 dark:bg-slate-850"
                   >
                     <div class="flex flex-col">
                       <h6 class="mb-4 text-sm leading-normal dark:text-white">
-                        Oliver Liam
+                        Product Name 1
                       </h6>
+
                       <span
                         class="mb-2 text-xs leading-tight dark:text-white/80"
-                        >Company Name:
+                        >HSN Code:
                         <span
                           class="font-semibold text-slate-700 dark:text-white sm:ml-2"
-                          >Viking Burrito</span
+                          >Luker-1234</span
                         ></span
                       >
-                      <span
-                        class="mb-2 text-xs leading-tight dark:text-white/80"
-                        >Email Address:
-                        <span
-                          class="font-semibold text-slate-700 dark:text-white sm:ml-2"
-                          >oliver@burrito.com</span
-                        ></span
-                      >
+
                       <span class="text-xs leading-tight dark:text-white/80"
-                        >VAT Number:
+                        >Others Details:
                         <span
                           class="font-semibold text-slate-700 dark:text-white sm:ml-2"
-                          >FRB1235476</span
+                          >Black, XL</span
                         ></span
                       >
+
+                      <span
+                        class="text-xs leading-tight dark:text-white/80 mt-1"
+                        >Rate:
+                        <span
+                          class="font-semibold text-slate-700 dark:text-white sm:ml-2"
+                          >₹ 1234</span
+                        ></span
+                      >
+
+                      <form class="mt-2">
+                        <input
+                          type="text"
+                          class="mb-2 focus:shadow-primary-outline dark:bg-slate-850 dark:text-white text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none"
+                          placeholder="Enter Quantity"
+                        />
+                        <input
+                          type="text"
+                          class="mb-2 focus:shadow-primary-outline dark:bg-slate-850 dark:text-white text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none"
+                          placeholder="Enter percentage"
+                        />
+                      </form>
                     </div>
-                    <div class="ml-auto text-right">
+                    <!-- buttons -->
+                    <div class="ml-auto text-right flex items-center gap-2">
+                      <!-- Quantity Selector -->
+                      <div
+                        class="flex items-center border border-slate-300 rounded-lg overflow-hidden"
+                      >
+                        <button
+                          class="px-2 py-1 text-sm font-bold text-slate-700 bg-gray-100 hover:bg-gray-200"
+                          onclick="decreaseQty(this)"
+                        >
+                          −
+                        </button>
+                        <input
+                          type="text"
+                          value="1"
+                          class="w-10 text-center text-sm border-x border-slate-300 outline-none"
+                        />
+                        <button
+                          class="px-2 py-1 text-sm font-bold text-slate-700 bg-gray-100 hover:bg-gray-200"
+                          onclick="increaseQty(this)"
+                        >
+                          +
+                        </button>
+                      </div>
+
+                      <!-- Remove Button -->
                       <a
                         class="relative z-10 inline-block px-4 py-2.5 mb-0 font-bold text-center text-transparent align-middle transition-all border-0 rounded-lg shadow-none cursor-pointer leading-normal text-sm ease-in bg-150 bg-gradient-to-tl from-red-600 to-orange-600 hover:-translate-y-px active:opacity-85 bg-x-25 bg-clip-text"
                         href="javascript:;"
-                        ><i
-                          class="mr-2 far fa-trash-alt bg-150 bg-gradient-to-tl from-red-600 to-orange-600 bg-x-25 bg-clip-text"
-                        ></i
-                        >Delete</a
                       >
+                        <i
+                          class="mr-2 far fa-trash-alt bg-150 bg-gradient-to-tl from-red-600 to-orange-600 bg-x-25 bg-clip-text"
+                        ></i>
+                        Remove
+                      </a>
+
+                      <!-- Edit Button -->
                       <a
                         class="inline-block dark:text-white px-4 py-2.5 mb-0 font-bold text-center align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer leading-normal text-sm ease-in bg-150 hover:-translate-y-px active:opacity-85 bg-x-25 text-slate-700"
                         href="javascript:;"
-                        ><i
+                      >
+                        <i
                           class="mr-2 fas fa-pencil-alt text-slate-700"
                           aria-hidden="true"
-                        ></i
-                        >Edit</a
-                      >
+                        ></i>
+                        Edit
+                      </a>
                     </div>
                   </li>
+
                   <li
-                    class="relative flex p-6 mt-4 mb-2 border-0 rounded-xl bg-gray-50 dark:bg-slate-850"
+                    class="relative flex p-6 mb-2 border-0 rounded-t-inherit rounded-xl bg-gray-50 dark:bg-slate-850"
                   >
                     <div class="flex flex-col">
                       <h6 class="mb-4 text-sm leading-normal dark:text-white">
-                        Lucas Harper
+                        Product Name 1
                       </h6>
+
                       <span
                         class="mb-2 text-xs leading-tight dark:text-white/80"
-                        >Company Name:
+                        >HSN Code:
                         <span
                           class="font-semibold text-slate-700 dark:text-white sm:ml-2"
-                          >Stone Tech Zone</span
+                          >Luker-1234</span
                         ></span
                       >
-                      <span
-                        class="mb-2 text-xs leading-tight dark:text-white/80"
-                        >Email Address:
-                        <span
-                          class="font-semibold text-slate-700 dark:text-white sm:ml-2"
-                          >lucas@stone-tech.com</span
-                        ></span
-                      >
+
                       <span class="text-xs leading-tight dark:text-white/80"
-                        >VAT Number:
+                        >Others Details:
                         <span
                           class="font-semibold text-slate-700 dark:text-white sm:ml-2"
-                          >FRB1235476</span
+                          >Black, XL</span
                         ></span
                       >
+
+                      <span
+                        class="text-xs leading-tight dark:text-white/80 mt-1"
+                        >Rate:
+                        <span
+                          class="font-semibold text-slate-700 dark:text-white sm:ml-2"
+                          >₹ 1234</span
+                        ></span
+                      >
+
+                      <form class="mt-2">
+                        <input
+                          type="text"
+                          class="mb-2 focus:shadow-primary-outline dark:bg-slate-850 dark:text-white text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none"
+                          placeholder="Enter Quantity"
+                        />
+                        <input
+                          type="text"
+                          class="mb-2 focus:shadow-primary-outline dark:bg-slate-850 dark:text-white text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none"
+                          placeholder="Enter percentage"
+                        />
+                      </form>
                     </div>
-                    <div class="ml-auto text-right">
+                    <!-- buttons -->
+                    <div class="ml-auto text-right flex items-center gap-2">
+                      <!-- Quantity Selector -->
+                      <div
+                        class="flex items-center border border-slate-300 rounded-lg overflow-hidden"
+                      >
+                        <button
+                          class="px-2 py-1 text-sm font-bold text-slate-700 bg-gray-100 hover:bg-gray-200"
+                          onclick="decreaseQty(this)"
+                        >
+                          −
+                        </button>
+                        <input
+                          type="text"
+                          value="1"
+                          class="w-10 text-center text-sm border-x border-slate-300 outline-none"
+                        />
+                        <button
+                          class="px-2 py-1 text-sm font-bold text-slate-700 bg-gray-100 hover:bg-gray-200"
+                          onclick="increaseQty(this)"
+                        >
+                          +
+                        </button>
+                      </div>
+
+                      <!-- Remove Button -->
                       <a
                         class="relative z-10 inline-block px-4 py-2.5 mb-0 font-bold text-center text-transparent align-middle transition-all border-0 rounded-lg shadow-none cursor-pointer leading-normal text-sm ease-in bg-150 bg-gradient-to-tl from-red-600 to-orange-600 hover:-translate-y-px active:opacity-85 bg-x-25 bg-clip-text"
                         href="javascript:;"
-                        ><i
-                          class="mr-2 far fa-trash-alt bg-150 bg-gradient-to-tl from-red-600 to-orange-600 bg-x-25 bg-clip-text"
-                        ></i
-                        >Delete</a
                       >
+                        <i
+                          class="mr-2 far fa-trash-alt bg-150 bg-gradient-to-tl from-red-600 to-orange-600 bg-x-25 bg-clip-text"
+                        ></i>
+                        Remove
+                      </a>
+
+                      <!-- Edit Button -->
                       <a
                         class="inline-block dark:text-white px-4 py-2.5 mb-0 font-bold text-center align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer leading-normal text-sm ease-in bg-150 hover:-translate-y-px active:opacity-85 bg-x-25 text-slate-700"
                         href="javascript:;"
-                        ><i
+                      >
+                        <i
                           class="mr-2 fas fa-pencil-alt text-slate-700"
                           aria-hidden="true"
-                        ></i
-                        >Edit</a
-                      >
+                        ></i>
+                        Edit
+                      </a>
                     </div>
                   </li>
+
                   <li
-                    class="relative flex p-6 mt-4 mb-2 border-0 rounded-b-inherit rounded-xl bg-gray-50 dark:bg-slate-850"
+                    class="relative flex p-6 mb-2 border-0 rounded-t-inherit rounded-xl bg-gray-50 dark:bg-slate-850"
                   >
                     <div class="flex flex-col">
                       <h6 class="mb-4 text-sm leading-normal dark:text-white">
-                        Ethan James
+                        Product Name 1
                       </h6>
+
                       <span
                         class="mb-2 text-xs leading-tight dark:text-white/80"
-                        >Company Name:
+                        >HSN Code:
                         <span
                           class="font-semibold text-slate-700 dark:text-white sm:ml-2"
-                          >Fiber Notion</span
+                          >Luker-1234</span
                         ></span
                       >
-                      <span
-                        class="mb-2 text-xs leading-tight dark:text-white/80"
-                        >Email Address:
-                        <span
-                          class="font-semibold text-slate-700 dark:text-white sm:ml-2"
-                          >ethan@fiber.com</span
-                        ></span
-                      >
+
                       <span class="text-xs leading-tight dark:text-white/80"
-                        >VAT Number:
+                        >Others Details:
                         <span
                           class="font-semibold text-slate-700 dark:text-white sm:ml-2"
-                          >FRB1235476</span
+                          >Black, XL</span
                         ></span
                       >
+
+                      <span
+                        class="text-xs leading-tight dark:text-white/80 mt-1"
+                        >Rate:
+                        <span
+                          class="font-semibold text-slate-700 dark:text-white sm:ml-2"
+                          >₹ 1234</span
+                        ></span
+                      >
+
+                      <form class="mt-2">
+                        <input
+                          type="text"
+                          class="mb-2 focus:shadow-primary-outline dark:bg-slate-850 dark:text-white text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none"
+                          placeholder="Enter Quantity"
+                        />
+                        <input
+                          type="text"
+                          class="mb-2 focus:shadow-primary-outline dark:bg-slate-850 dark:text-white text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none"
+                          placeholder="Enter percentage"
+                        />
+                      </form>
                     </div>
-                    <div class="ml-auto text-right">
+                    <!-- buttons -->
+                    <div class="ml-auto text-right flex items-center gap-2">
+                      <!-- Quantity Selector -->
+                      <div
+                        class="flex items-center border border-slate-300 rounded-lg overflow-hidden"
+                      >
+                        <button
+                          class="px-2 py-1 text-sm font-bold text-slate-700 bg-gray-100 hover:bg-gray-200"
+                          onclick="decreaseQty(this)"
+                        >
+                          −
+                        </button>
+                        <input
+                          type="text"
+                          value="1"
+                          class="w-10 text-center text-sm border-x border-slate-300 outline-none"
+                        />
+                        <button
+                          class="px-2 py-1 text-sm font-bold text-slate-700 bg-gray-100 hover:bg-gray-200"
+                          onclick="increaseQty(this)"
+                        >
+                          +
+                        </button>
+                      </div>
+
+                      <!-- Remove Button -->
                       <a
                         class="relative z-10 inline-block px-4 py-2.5 mb-0 font-bold text-center text-transparent align-middle transition-all border-0 rounded-lg shadow-none cursor-pointer leading-normal text-sm ease-in bg-150 bg-gradient-to-tl from-red-600 to-orange-600 hover:-translate-y-px active:opacity-85 bg-x-25 bg-clip-text"
                         href="javascript:;"
-                        ><i
-                          class="mr-2 far fa-trash-alt bg-150 bg-gradient-to-tl from-red-600 to-orange-600 bg-x-25 bg-clip-text"
-                        ></i
-                        >Delete</a
                       >
+                        <i
+                          class="mr-2 far fa-trash-alt bg-150 bg-gradient-to-tl from-red-600 to-orange-600 bg-x-25 bg-clip-text"
+                        ></i>
+                        Remove
+                      </a>
+
+                      <!-- Edit Button -->
                       <a
                         class="inline-block dark:text-white px-4 py-2.5 mb-0 font-bold text-center align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer leading-normal text-sm ease-in bg-150 hover:-translate-y-px active:opacity-85 bg-x-25 text-slate-700"
                         href="javascript:;"
-                        ><i
+                      >
+                        <i
                           class="mr-2 fas fa-pencil-alt text-slate-700"
                           aria-hidden="true"
-                        ></i
-                        >Edit</a
+                        ></i>
+                        Edit
+                      </a>
+                    </div>
+                  </li>
+
+                  <li
+                    class="relative flex p-6 mb-2 border-0 rounded-t-inherit rounded-xl bg-gray-50 dark:bg-slate-850"
+                  >
+                    <div class="flex flex-col">
+                      <h6 class="mb-4 text-sm leading-normal dark:text-white">
+                        Product Name 1
+                      </h6>
+
+                      <span
+                        class="mb-2 text-xs leading-tight dark:text-white/80"
+                        >HSN Code:
+                        <span
+                          class="font-semibold text-slate-700 dark:text-white sm:ml-2"
+                          >Luker-1234</span
+                        ></span
                       >
+
+                      <span class="text-xs leading-tight dark:text-white/80"
+                        >Others Details:
+                        <span
+                          class="font-semibold text-slate-700 dark:text-white sm:ml-2"
+                          >Black, XL</span
+                        ></span
+                      >
+
+                      <span
+                        class="text-xs leading-tight dark:text-white/80 mt-1"
+                        >Rate:
+                        <span
+                          class="font-semibold text-slate-700 dark:text-white sm:ml-2"
+                          >₹ 1234</span
+                        ></span
+                      >
+
+                      <form class="mt-2">
+                        <input
+                          type="text"
+                          class="mb-2 focus:shadow-primary-outline dark:bg-slate-850 dark:text-white text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none"
+                          placeholder="Enter Quantity"
+                        />
+                        <input
+                          type="text"
+                          class="mb-2 focus:shadow-primary-outline dark:bg-slate-850 dark:text-white text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none"
+                          placeholder="Enter percentage"
+                        />
+                      </form>
+                    </div>
+                    <!-- buttons -->
+                    <div class="ml-auto text-right flex items-center gap-2">
+                      <!-- Quantity Selector -->
+                      <div
+                        class="flex items-center border border-slate-300 rounded-lg overflow-hidden"
+                      >
+                        <button
+                          class="px-2 py-1 text-sm font-bold text-slate-700 bg-gray-100 hover:bg-gray-200"
+                          onclick="decreaseQty(this)"
+                        >
+                          −
+                        </button>
+                        <input
+                          type="text"
+                          value="1"
+                          class="w-10 text-center text-sm border-x border-slate-300 outline-none"
+                        />
+                        <button
+                          class="px-2 py-1 text-sm font-bold text-slate-700 bg-gray-100 hover:bg-gray-200"
+                          onclick="increaseQty(this)"
+                        >
+                          +
+                        </button>
+                      </div>
+
+                      <!-- Remove Button -->
+                      <a
+                        class="relative z-10 inline-block px-4 py-2.5 mb-0 font-bold text-center text-transparent align-middle transition-all border-0 rounded-lg shadow-none cursor-pointer leading-normal text-sm ease-in bg-150 bg-gradient-to-tl from-red-600 to-orange-600 hover:-translate-y-px active:opacity-85 bg-x-25 bg-clip-text"
+                        href="javascript:;"
+                      >
+                        <i
+                          class="mr-2 far fa-trash-alt bg-150 bg-gradient-to-tl from-red-600 to-orange-600 bg-x-25 bg-clip-text"
+                        ></i>
+                        Remove
+                      </a>
+
+                      <!-- Edit Button -->
+                      <a
+                        class="inline-block dark:text-white px-4 py-2.5 mb-0 font-bold text-center align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer leading-normal text-sm ease-in bg-150 hover:-translate-y-px active:opacity-85 bg-x-25 text-slate-700"
+                        href="javascript:;"
+                      >
+                        <i
+                          class="mr-2 fas fa-pencil-alt text-slate-700"
+                          aria-hidden="true"
+                        ></i>
+                        Edit
+                      </a>
+                    </div>
+                  </li>
+
+                  <li
+                    class="relative flex p-6 mb-2 border-0 rounded-t-inherit rounded-xl bg-gray-50 dark:bg-slate-850"
+                  >
+                    <div class="flex flex-col">
+                      <h6 class="mb-4 text-sm leading-normal dark:text-white">
+                        Product Name 1
+                      </h6>
+
+                      <span
+                        class="mb-2 text-xs leading-tight dark:text-white/80"
+                        >HSN Code:
+                        <span
+                          class="font-semibold text-slate-700 dark:text-white sm:ml-2"
+                          >Luker-1234</span
+                        ></span
+                      >
+
+                      <span class="text-xs leading-tight dark:text-white/80"
+                        >Others Details:
+                        <span
+                          class="font-semibold text-slate-700 dark:text-white sm:ml-2"
+                          >Black, XL</span
+                        ></span
+                      >
+
+                      <span
+                        class="text-xs leading-tight dark:text-white/80 mt-1"
+                        >Rate:
+                        <span
+                          class="font-semibold text-slate-700 dark:text-white sm:ml-2"
+                          >₹ 1234</span
+                        ></span
+                      >
+
+                      <form class="mt-2">
+                        <input
+                          type="text"
+                          class="mb-2 focus:shadow-primary-outline dark:bg-slate-850 dark:text-white text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none"
+                          placeholder="Enter Quantity"
+                        />
+                        <input
+                          type="text"
+                          class="mb-2 focus:shadow-primary-outline dark:bg-slate-850 dark:text-white text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none"
+                          placeholder="Enter percentage"
+                        />
+                      </form>
+                    </div>
+                    <!-- buttons -->
+                    <div class="ml-auto text-right flex items-center gap-2">
+                      <!-- Quantity Selector -->
+                      <div
+                        class="flex items-center border border-slate-300 rounded-lg overflow-hidden"
+                      >
+                        <button
+                          class="px-2 py-1 text-sm font-bold text-slate-700 bg-gray-100 hover:bg-gray-200"
+                          onclick="decreaseQty(this)"
+                        >
+                          −
+                        </button>
+                        <input
+                          type="text"
+                          value="1"
+                          class="w-10 text-center text-sm border-x border-slate-300 outline-none"
+                        />
+                        <button
+                          class="px-2 py-1 text-sm font-bold text-slate-700 bg-gray-100 hover:bg-gray-200"
+                          onclick="increaseQty(this)"
+                        >
+                          +
+                        </button>
+                      </div>
+
+                      <!-- Remove Button -->
+                      <a
+                        class="relative z-10 inline-block px-4 py-2.5 mb-0 font-bold text-center text-transparent align-middle transition-all border-0 rounded-lg shadow-none cursor-pointer leading-normal text-sm ease-in bg-150 bg-gradient-to-tl from-red-600 to-orange-600 hover:-translate-y-px active:opacity-85 bg-x-25 bg-clip-text"
+                        href="javascript:;"
+                      >
+                        <i
+                          class="mr-2 far fa-trash-alt bg-150 bg-gradient-to-tl from-red-600 to-orange-600 bg-x-25 bg-clip-text"
+                        ></i>
+                        Remove
+                      </a>
+
+                      <!-- Edit Button -->
+                      <a
+                        class="inline-block dark:text-white px-4 py-2.5 mb-0 font-bold text-center align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer leading-normal text-sm ease-in bg-150 hover:-translate-y-px active:opacity-85 bg-x-25 text-slate-700"
+                        href="javascript:;"
+                      >
+                        <i
+                          class="mr-2 fas fa-pencil-alt text-slate-700"
+                          aria-hidden="true"
+                        ></i>
+                        Edit
+                      </a>
                     </div>
                   </li>
                 </ul>
@@ -459,12 +797,156 @@
             </div>
           </div>
 
+          <!-- Show Billings -->
+          <div
+            class="w-full max-w-full px-3 mt-6 shrink-0 md:w-4/12 md:flex-0 md:mt-0"
+          >
+            <div
+              class="relative flex flex-col min-w-0 break-words bg-white border-0 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border"
+            >
+              <div class="p-4 pb-0 rounded-t-4">
+                <h6 class="mb-0 dark:text-white">Bill Details</h6>
+              </div>
+              <div class="flex-auto p-4">
+                <ul class="flex flex-col pl-0 mb-0 rounded-lg">
+                  <li
+                    class="relative flex justify-between py-2 pr-4 mb-2 border-0 rounded-t-lg rounded-xl text-inherit"
+                  >
+                    <div class="flex items-center">
+                      <div
+                        class="inline-block w-8 h-8 mr-4 text-center text-black bg-center shadow-sm fill-current stroke-none bg-gradient-to-tl from-zinc-800 to-zinc-700 dark:bg-gradient-to-tl dark:from-slate-750 dark:to-gray-850 rounded-xl"
+                      >
+                        <i
+                          class="text-white ni ni-box-2 relative top-0.75 text-xxs"
+                        ></i>
+                      </div>
+                      <div class="flex flex-col">
+                        <h6
+                          class="mb-1 text-sm leading-normal text-slate-700 dark:text-white"
+                        >
+                          Number of products:
+                          <span
+                            class="font-semibold text-red-600 dark:text-white"
+                            >5</span
+                          >
+                        </h6>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li
+                    class="relative flex justify-between py-2 pr-4 mb-2 border-0 rounded-t-lg rounded-xl text-inherit"
+                  >
+                    <div class="flex items-center">
+                      <div
+                        class="inline-block w-8 h-8 mr-4 text-center text-black bg-center shadow-sm fill-current stroke-none bg-gradient-to-tl from-zinc-800 to-zinc-700 dark:bg-gradient-to-tl dark:from-slate-750 dark:to-gray-850 rounded-xl"
+                      >
+                        <i
+                          class="text-white ni ni-box-2 relative top-0.75 text-xxs"
+                        ></i>
+                      </div>
+                      <div class="flex flex-col">
+                        <h6
+                          class="mb-1 text-sm leading-normal text-slate-700 dark:text-white"
+                        >
+                          Total billing amount:
+                          <span
+                            class="font-semibold text-red-600 dark:text-white"
+                            >₹ 5350</span
+                          >
+                        </h6>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+
+                <!-- Customer Details -->
+                <div class="p-4 pb-0 rounded-t-4">
+                  <h6 class="mb-0 dark:text-white">Customer Details</h6>
+                </div>
+
+                <div class="flex-auto p-4">
+                  <div class="flex flex-wrap -mx-3">
+                    <div
+                      class="w-full max-w-full px-3 shrink-0 md:w-6/12 md:flex-0"
+                    >
+                      <div class="mb-4">
+                        <label
+                          for="username"
+                          class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80"
+                          >Customer's Name</label
+                        >
+                        <input
+                          type="text"
+                          name="username"
+                          placeholder="Enter Name"
+                          class="focus:shadow-primary-outline dark:bg-slate-850 dark:text-white text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="w-full max-w-full px-3 shrink-0 md:w-6/12 md:flex-0"
+                    >
+                      <div class="mb-4">
+                        <label
+                          for="email"
+                          class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80"
+                          >Email ID</label
+                        >
+                        <input
+                          type="email"
+                          name="email"
+                          placeholder="Enter Email ID"
+                          class="focus:shadow-primary-outline dark:bg-slate-850 dark:text-white text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="w-full max-w-full px-3 shrink-0 md:w-12/12 md:flex-0"
+                    >
+                      <div class="mb-4">
+                        <label
+                          for="first name"
+                          class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80"
+                          >Mobile Number</label
+                        >
+                        <input
+                          type="text"
+                          name="first name"
+                          placeholder="Enter Mobile Number"
+                          class="focus:shadow-primary-outline dark:bg-slate-850 dark:text-white text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <button
+                  class="px-8 w-full py-2 font-bold leading-normal text-center text-white align-middle transition-all ease-in border-0 rounded-lg shadow-md cursor-pointer text-xs bg-blue-500 lg:block tracking-tight-rem hover:shadow-xs hover:-translate-y-px active:opacity-85"
+                  style="font-size: 1rem"
+                >
+                  Generate Bill
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
-
-
       </div>
     </main>
 
+    <script>
+      function increaseQty(button) {
+        const input = button.parentElement.querySelector("input");
+        let value = parseInt(input.value, 10);
+        input.value = value + 1;
+      }
+
+      function decreaseQty(button) {
+        const input = button.parentElement.querySelector("input");
+        let value = parseInt(input.value, 10);
+        if (value > 1) input.value = value - 1;
+      }
+    </script>
   </body>
   <!-- plugin for scrollbar  -->
   <script src="../assets/js/plugins/perfect-scrollbar.min.js" async></script>
